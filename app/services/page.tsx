@@ -342,7 +342,7 @@ export default function ServicesPage() {
                                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
                                     <h4 className="text-base sm:text-lg font-bold text-accent leading-tight">{pkg.name}</h4>
                                     <span className="text-lg sm:text-xl font-bold">{pkg.price}</span>
-                                  </div>
+                                  </div>                                        
                                   <p className="text-[10px] sm:text-xs text-muted-foreground font-medium italic">Delivery: {pkg.delivery}</p>
                                   <ul className="space-y-1.5">
                                     {pkg.deliverables.slice(0, 5).map((d: string, j: number) => (
@@ -423,11 +423,13 @@ export default function ServicesPage() {
                           )}
 
                           <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                            <Link href="/pricing" className="w-full sm:w-auto">
-                              <Button className="w-full rounded-full px-6 h-10 bg-accent hover:bg-accent/90 text-sm">
-                                Pricing Details
-                              </Button>
-                            </Link>
+                            {(service.packages || service.phases || service.cost) && (
+                              <Link href="/pricing" className="w-full sm:w-auto">
+                                <Button className="w-full rounded-full px-6 h-10 bg-accent hover:bg-accent/90 text-sm">
+                                  View Pricing
+                                </Button>
+                              </Link>
+                            )}
                             <a 
                               href={getWhatsAppLink(service.title)} 
                               target="_blank" 
@@ -435,7 +437,7 @@ export default function ServicesPage() {
                               className="w-full sm:w-auto"
                             >
                               <Button variant="outline" className="w-full rounded-full px-6 h-10 text-sm">
-                                Instant Consultation
+                                Book Now
                               </Button>
                             </a>
                           </div>

@@ -11,28 +11,40 @@ export default function Home() {
       <Nav />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-3 sm:px-6 lg:px-8 py-10 lg:py-20">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
-          <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-balance">
-            Register Your Business with{' '}
-            <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Confidence
-            </span>
-          </h1>
-          <p className="text-base lg:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto text-pretty">
-            Your Compliance Buddy. We help build the legal structure your business needs while keeping you compliant through the years.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-            <Link href="/services">
-              <Button size="lg" className="rounded-full px-6 py-5 text-base bg-accent hover:bg-accent/90 shadow-md shadow-accent/10">
-                Get Started Today
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button size="lg" variant="outline" className="rounded-full px-6 py-5 text-base">
-                Contact Us
-              </Button>
-            </Link>
+      <section className="relative overflow-hidden py-16 lg:py-28">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/image.png" 
+            alt="Hero Background" 
+            className="w-full h-full object-cover opacity-100"
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-background/40 via-background/60 to-background" />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-balance">
+              Register Your Business with{' '}
+              <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                Confidence
+              </span>
+            </h1>
+            <p className="text-lg lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto text-pretty">
+              Your Compliance Buddy. We help build the legal structure your business needs while keeping you compliant through the years.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Link href="/services">
+                <Button size="lg" className="rounded-full px-8 py-6 text-lg bg-accent hover:bg-accent/90 shadow-lg shadow-accent/20">
+                  Get Started Today
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button size="lg" variant="outline" className="rounded-full px-8 py-6 text-lg">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
