@@ -117,6 +117,9 @@
 }
 
 @layer base {
+  html {
+    font-size: 14.5px; /* Slight global reduction to make site feel smaller */
+  }
   * {
     @apply border-border outline-ring/50;
   }
